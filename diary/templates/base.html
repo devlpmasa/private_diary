@@ -31,7 +31,7 @@
                     <div class="collapse navbar-collapse" id="navbarResponsive">
                         <ul class="navbar-nav me-auto">
                             <li class="nav-time">
-                                <a class="nav-link {% block active_inquiry %}{% endblock %}" href="#" >INQUIRY</a>
+                                <a class="nav-link {% block active_inquiry %}{% endblock %}" href="{% url 'diary:inquiry' %}" >INQUIRY</a>
                             </li>
                         </ul>
                         <ul class="navbar-nav ms-auto">
@@ -50,7 +50,7 @@
 
             {% block contents %}{% endblock %}
 
-            <!--Footer -->>
+            <!--Footer -->
             <footer class="py-5 bg-black">
                 <div class="container px-5">
                     <p class="m-0 text-center text-white small">
