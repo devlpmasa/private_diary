@@ -17,6 +17,21 @@
 
         <link rel="stylesheet" type="text/css" href="{% static 'css/mystyle.css' %}">
         {% block head %}{% endblock %}
+
+        {% if message %}
+            <div class="container my-div-style">
+                <div class="row">
+                    <ul class="message" style="list-style: none;">
+                        {% for message in messages %}
+                        <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>
+                            {{ message }}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        {% endif %}
+
+        {% block contents %}{% endblock %}
     </head>
     <body>
         <div id="wrapper">
