@@ -16,16 +16,17 @@
         <link href="{% static 'css/one-page-wonder.css' %}" rel="stylesheet" />
 
         <link rel="stylesheet" type="text/css" href="{% static 'css/mystyle.css' %}">
-        {% block head %}{% endblock %}
+        {% block header %}{% endblock %}
 
-        {% if message %}
+        {% if messages %}
             <div class="container my-div-style">
                 <div class="row">
-                    <ul class="message" style="list-style: none;">
+                    <ul class="messages" style="list-style: none;">
                         {% for message in messages %}
                         <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>
                             {{ message }}
                         </li>
+                        {% endfor %}
                     </ul>
                 </div>
             </div>
@@ -61,9 +62,6 @@
                 </div>
             </nav>
 
-            {% block header %}{% endblock %}
-
-            {% block contents %}{% endblock %}
 
             <!--Footer -->
             <footer class="py-5 bg-black">
